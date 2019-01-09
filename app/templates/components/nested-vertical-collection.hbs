@@ -1,0 +1,18 @@
+{{#vertical-collection
+  items
+  tagName='ul'
+  estimateHeight=200
+  containerSelector='body'
+  staticHeight=false
+  bufferSize=1
+  renderAll=false
+  renderFromLast=false
+  as |item|
+}}
+  <li>
+    {{item.name}}
+    {{#if item.children}}
+      {{nested-vertical-collection items=item.children}}
+    {{/if}}
+  </li>
+{{/vertical-collection}}
